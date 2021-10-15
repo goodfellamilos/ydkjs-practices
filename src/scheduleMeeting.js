@@ -16,7 +16,7 @@ function validateStartTime(startTime) {
   }
 }
 
-function scheduleMeeting (startTime, durationMinutes) {
+module.exports = function scheduleMeeting (startTime, durationMinutes) {
   validateStartTime(startTime);
 
   const dayStartInMinutes = getTimeInMinutes(DAY_START);
@@ -31,5 +31,3 @@ function scheduleMeeting (startTime, durationMinutes) {
 
   return true;
 }
-
-export default scheduleMeeting;
