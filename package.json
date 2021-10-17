@@ -2,10 +2,8 @@
   "name": "ydkjs-practices",
   "version": "1.0.0",
   "description": "You Don't Know JS Practices",
-  "main": "index.js",
   "repository": "https://github.com/goodfellamilos/ydkjs-practices",
-  "author": "Milos Nikolic <mnikolic987@gmail.com>",
-  "license": "MIT",
+  "author": "Milos Nikolic",
   "private": false,
   "devDependencies": {
     "chai": "^4.3.4",
