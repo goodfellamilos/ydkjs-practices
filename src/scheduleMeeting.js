@@ -6,18 +6,14 @@ function getTimeInMinutes(time) {
   return hours * 60 + Number(minutes);
 }
 
-function validateStartTime(startTime) {
-  if (typeof startTime !== "string") {
-    throw Error("Provided startTime is in wrong format!")
-  }
-
-  if (startTime.match(/^(\d{1,2}):(\d{2})$/g).length === 0) {
-    throw Error("Provided startTime is in wrong format!")
-  }
-}
-
 module.exports = function scheduleMeeting (startTime, durationMinutes) {
-  validateStartTime(startTime);
+  if (!startTime || !startTime.match(/^(\d{1,2}):(\d{2})$/g)) {
+    throw Error("Provided time is in a wrong format!");
+  }
+
+  if (typeof durationMinutes !== "number") {
+    throw Error("Provided duration is not a number!");
+  }
 
   const dayStartInMinutes = getTimeInMinutes(DAY_START);
   const dayEndInMinutes = getTimeInMinutes(DAY_END);
